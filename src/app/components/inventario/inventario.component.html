@@ -1,0 +1,38 @@
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="inventario.component.html">Inventario</a>
+    <a class="navbar-brand" href="crear/crear.component.html">Crear Articulo</a>
+  </div>
+</nav>
+
+<div>
+  <button id="btn-create" class="btn btn-success" (click)="crear()">Crear</button>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-primary">
+    <thead>
+      <tr>
+        <th scope="col">Id Articulo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Precio de compra</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Tipo Articulo</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let datos of articulos" class="">
+        <td scope="row">{{datos.id_articulo}}</td>
+        <td scope="row">{{datos.descripcion}}</td>
+        <td scope="row">{{datos.precio}}</td>
+        <td scope="row">{{datos.stock}}</td>
+        <td scope="row">{{datos.id_tipo}}</td>
+        <td><app-editar ></app-editar></td>
+        <td><app-eliminar ></app-eliminar></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
