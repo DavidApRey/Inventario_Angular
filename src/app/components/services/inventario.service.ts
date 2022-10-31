@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { articulo } from '../interfaces/inventario.interfaces';
+import { articulo, tipo_articulo } from '../interfaces/inventario.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,19 @@ export class InventarioService {
       id_tipo: 3
     }];
 
+  private _tipo_articulo: tipo_articulo[] =[{
+    id_tipo:2,
+    tipo_articulo:"Papeleria"
+  }];
+
   private url = "http://localhost/rest_api_php/Inventario";
 
   get articulos() {
     return [...this._articulos];
+  }
+
+  get tipo_articulos() {
+    return [...this._tipo_articulo];
   }
 
   crearArticulos( articulo: articulo ) {
