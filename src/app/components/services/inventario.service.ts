@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { articulo, tipo_articulo } from '../interfaces/inventario.interfaces';
+import { articulo } from '../interfaces/inventario.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -26,10 +26,6 @@ export class InventarioService {
 
   get articulos() {
     return [...this._articulos];
-  }
-
-  get tipo_articulos() {
-    return [...this._tipo_articulo];
   }
 
   crearArticulos( articulo: articulo ) {

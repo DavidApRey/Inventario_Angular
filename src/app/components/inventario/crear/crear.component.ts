@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { articulo, crear_arti, tipo_articulo } from '../../interfaces/inventario.interfaces';
+import { articulo } from '../../interfaces/inventario.interfaces';
 import { InventarioService } from '../../services/inventario.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -28,7 +28,7 @@ export class CrearComponent {
 
   onSubmit(){
 
-
+    this.InventarioService.crearArticulos(this.crear_articulos.value);
 
   }
 
