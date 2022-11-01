@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { articulo, crear_arti } from '../../interfaces/inventario.interfaces';
+import { articulo, crear_arti, tipo_articulo } from '../../interfaces/inventario.interfaces';
 import { InventarioService } from '../../services/inventario.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -14,19 +14,22 @@ export class CrearComponent {
 
   constructor (
     private InventarioService: InventarioService,
-    private fb: FormBuilder ){
+    private fb: FormBuilder )
+    {
+
       this.crear_articulos = this.fb.group({
+        id_articulo: ['', Validators.required],
         descripcion: ['', Validators.required],
         precio: ['', Validators.required],
-        stock: ['', Validators.required]
-      });
+        stock: ['', Validators.required],
+        id_tipo: ['', Validators.required]
+    });
     }
 
   onSubmit(){
 
-    console.log("desc"+this.crear_articulos.value.descripcion);
-    console.log("precio"+this.crear_articulos.value.precio);
-    console.log("stock"+this.crear_articulos.value.stock);
+
+
   }
 
 }

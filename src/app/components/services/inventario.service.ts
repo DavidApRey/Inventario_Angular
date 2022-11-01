@@ -22,11 +22,6 @@ export class InventarioService {
       id_tipo: 3
     }];
 
-  private _tipo_articulo: tipo_articulo[] =[{
-    id_tipo:2,
-    tipo_articulo:"Papeleria"
-  }];
-
   private url = "http://localhost/rest_api_php/Inventario";
 
   get articulos() {
@@ -40,10 +35,6 @@ export class InventarioService {
   crearArticulos( articulo: articulo ) {
     this._articulos.unshift(articulo);
     console.log(this._articulos);
-  }
-
-  eliminarArticulos( id: number ){
-    this._articulos
   }
 
 }

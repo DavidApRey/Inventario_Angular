@@ -6,6 +6,18 @@
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label"
+        >Id Articulo</label
+      >
+      <input
+        formControlName="id_articulo"
+        type="text"
+        class="form-control"
+        aria-describedby="emailHelp"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"
         >Descripcion Articulo</label
       >
       <input
@@ -20,7 +32,6 @@
           >El nombre del producto <strong>Es Obligatorio</strong>
         </span>
       </div>
-
     </div>
 
     <div class="mb-3">
@@ -46,12 +57,12 @@
       </div>
     </div>
 
-    <!-- <div class="mb-3">
+    <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Tipo de Articulo</label>
-      <select name="tipo_arti" class="form-select" aria-label="Default select example">
-        <option value=""></option>
+      <select formControlName="id_tipo" class="form-select" aria-label="Default select example">
+        <option value="3">Papeleria</option>
       </select>
-    </div> -->
+    </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
