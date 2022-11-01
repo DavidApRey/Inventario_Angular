@@ -1,3 +1,7 @@
 .crear_articulo{
   width: 50%;
 }
+
+.span-danger{
+  color: red;
+}

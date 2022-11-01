@@ -1,23 +1,49 @@
 <h1>Crear Articulo</h1>
 <div class="crear_articulo">
-
   <!-- {{crear_arti.value | json}} -->
 
-  <form #crear_arti = "ngForm" (ngSubmit)="crear_articulo(crear_arti)">
+  <form [formGroup]="crear_articulos" (ngSubmit)="onSubmit()">
 
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Descripcion Articulo</label>
-      <input name="descripcion" [(ngModel)]="" #codigo="ngModel" type="text" class="form-control"  aria-describedby="emailHelp">
+      <label for="exampleInputEmail1" class="form-label"
+        >Descripcion Articulo</label
+      >
+      <input
+        formControlName="descripcion"
+        type="text"
+        class="form-control"
+        aria-describedby="emailHelp"
+      />
+
+      <div *ngIf="crear_articulos.controls['descripcion'].hasError('required')">
+        <span class="span-danger"
+          >El nombre del producto <strong>Es Obligatorio</strong>
+        </span>
+      </div>
+
     </div>
 
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Precio de Compra (Por Unidad)</label>
-      <input name="precio" type="number" class="form-control" ngModel>
+      <label for="exampleInputPassword1" class="form-label"
+        >Precio de Compra (Por Unidad)</label
+      >
+      <input formControlName="precio" type="number" class="form-control" />
+
+      <div *ngIf="crear_articulos.controls['precio'].hasError('required')">
+        <span class="span-danger">El precio del producto <strong>Es Obligatorio</strong></span>
+      </div>
+
     </div>
 
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Stock Inicial del articulo</label>
-      <input name="stock" type="number" class="form-control" ngModel>
+      <label for="exampleInputPassword1" class="form-label"
+        >Stock Inicial del articulo</label
+      >
+      <input formControlName="stock" type="number" class="form-control" />
+
+      <div *ngIf="crear_articulos.controls['stock'].hasError('required')">
+        <span class="span-danger">El stock del producto <strong>Es Obligatorio</strong></span>
+      </div>
     </div>
 
     <!-- <div class="mb-3">

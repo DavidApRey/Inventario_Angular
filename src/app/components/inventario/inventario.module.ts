@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { EditarComponent } from './editar/editar.component';
 import { EliminarComponent } from './eliminar/eliminar.component';
 import { InventarioComponent } from './inventario.component';
 import { CrearComponent } from './crear/crear.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,8 @@ import { CrearComponent } from './crear/crear.component';
     InventarioComponent
   ],
   imports: [
-    FormsModule,
     CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
 })
