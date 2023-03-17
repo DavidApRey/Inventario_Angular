@@ -1,5 +1,5 @@
 export interface articulo {
-  id_articulo: number,
+  id_articulo: string,
   descripcion: string,
   precio: number,
   stock: number,
